@@ -10,8 +10,13 @@
   </head>
   <body>
     <script>
-      const socket = io("http://localhost:3001");
+      const socket = io("http://localhost:3000");
       socket.on("connection");
+
+      // client-side emit event response
+      socket.on("message", (arg) => {
+        console.log(arg); // world
+      });
     </script>
   </body>
 </html>
