@@ -5,14 +5,16 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+app.set("view engine", "ejs");
+
+app.get("/home", (req, res) => {
+  res.render("home");
 });
 
 io.on("connection", (socket) => {
-  console.log("a user connected");
+  console.log("user connected: " + socket.id);
 });
 
 server.listen(3000, () => {
-  console.log("listening on *:3000");
+  console.log("Server running on:  3000");
 });
