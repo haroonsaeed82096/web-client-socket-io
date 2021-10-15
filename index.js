@@ -1,10 +1,12 @@
 const express = require("express");
+const expressLayouts = require("express-ejs-layouts");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
+app.use(expressLayouts);
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
