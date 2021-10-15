@@ -39,7 +39,7 @@ body {
   margin-bottom: 20px;
 }
 .login-container .btn {
-  border-radius: 10px;
+  border-radius: 5px;
   color: #ded9ee;
   font-size: 20px;
   padding: 10px 10px;
@@ -61,7 +61,19 @@ body {
   background-image: -ms-linear-gradient(top, #7464bc, #8e75e4);
   background-image: -o-linear-gradient(top, #7464bc, #8e75e4);
   background-image: -webkit-gradient(to bottom, #7464bc, #8e75e4);
-  border-radius: 11px;
+  border-radius: 5px;
   text-decoration: none;
+  width: 100%;
+}
+.login-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-container input {
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 5px;
+  height: 40px;
   width: 100%;
 }
