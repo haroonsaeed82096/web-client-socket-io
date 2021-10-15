@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Socket IO</title>
 
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
   </head>
   <body>
     <div class="login-container">
-      <div class="loginHeader"></div>
-      <div class="loginForm">
+      <div class="loginHeader">
+        <header>
+          <i class="fas fa-comments-alt"></i> Welcome to Chat Server!
+        </header>
+      </div>
+      <div class="login-form">
         <form action="chat.html">
           <div class="form-control">
             <label for="username">Username</label>
@@ -32,6 +43,9 @@
               placeholder="Enter password"
               required
             />
+          </div>
+          <div class="form-control">
+            <button type="submit" class="btn">Login</button>
           </div>
         </form>
       </div>
