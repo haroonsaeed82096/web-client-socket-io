@@ -2,15 +2,19 @@ const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const app = express();
 const http = require("http");
+const path = require("path");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-app.use(expressLayouts);
+//app.use(expressLayouts);
 app.set("view engine", "ejs");
 
+const testHeading = "This is a test heading";
+
+app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("/index");
 });
 
 io.on("connection", (socket) => {

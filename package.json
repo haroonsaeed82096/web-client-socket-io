@@ -2,7 +2,7 @@
   "name": "chat-server",
   "version": "1.0.0",
   "description": "Web Client for socket.io chat server",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon start",
     "test": "echo \"Error: no test specified\" && exit 1"
