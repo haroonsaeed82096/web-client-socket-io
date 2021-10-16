@@ -18,12 +18,12 @@ body {
   background: var(--light-color);
   margin: 20px;
 }
-.login-container {
+.container {
   max-width: 500px;
   margin: 80px auto;
   color: #fff;
 }
-.loginHeader {
+.header {
   text-align: center;
   padding: 20px;
   background: var(--dark-color-a);
@@ -38,7 +38,7 @@ body {
 .form-control {
   margin-bottom: 20px;
 }
-.login-container .btn {
+.btn {
   border-radius: 5px;
   color: #ded9ee;
   font-size: 20px;
@@ -53,7 +53,7 @@ body {
   width: 100%;
 }
 
-.login-container .btn:hover {
+.btn:hover {
   border: solid #7464bc 0;
   background: #7464bc;
   background-image: -webkit-linear-gradient(top, #7464bc, #8e75e4);
