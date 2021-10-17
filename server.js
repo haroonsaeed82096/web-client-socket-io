@@ -8,7 +8,7 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 
 //app.use(expressLayouts);
-app.set("view engine", "ejs");
+//app.set("view engine", "ejs");
 
 const testHeading = "This is a test heading";
 
@@ -25,6 +25,11 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", (arg) => {
     io.emit("message", "A user has left"); // world
+  });
+
+  //Listen to chat message
+  socket.on("chatMsg", (msg) => {
+    io.emit("message", msg);
   });
 });
 
