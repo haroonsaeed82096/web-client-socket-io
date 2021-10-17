@@ -19,7 +19,6 @@ app.get("/", (req, res) => {
 
 io.on("connection", (socket) => {
   console.log("user connected: " + socket.id);
-
   socket.emit("message", "Welcome to Chatroom!");
   socket.broadcast.emit("message", "A user has joined!");
 

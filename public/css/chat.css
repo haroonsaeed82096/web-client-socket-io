@@ -19,10 +19,19 @@
 }
 .messages-area {
   padding: 30px;
-  max-height: 500px;
+  height: 350px;
   overflow-y: scroll;
   border: solid 5px var(--dark-color-b);
 }
+
+.message {
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: var(--light-color);
+  border-radius: 5px;
+  overflow-wrap: break-word;
+}
+
 .message-form-container {
   background-color: var(--dark-color-a);
 }

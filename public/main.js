@@ -1,10 +1,13 @@
 const chatForm = document.getElementById("chat-form");
+const messagesArea = document.querySelector(".messages-area");
 
 const socket = io();
 
 //Message from server
 socket.on("message", (message) => {
   outputMessage(message);
+
+  messagesArea.scrollTop = messagesArea.scrollHeight;
 });
 
 chatForm.addEventListener("submit", (e) => {
