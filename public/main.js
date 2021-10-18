@@ -17,12 +17,16 @@ chatForm.addEventListener("submit", (e) => {
 
   socket.emit("chatMsg", msg);
 
-  document.getElementById("msg").value = "";
+  e.target.elements.msg.value = "";
+  e.target.elements.msg.focus();
 });
 
 function outputMessage(message) {
   const div = document.createElement("div");
   div.classList.add("message");
-  div.innerHTML = `<p class="text">${message}</p>`;
+  div.innerHTML = `
+    <p class="meta">${message.author} <span>${message.time}</span></p> 
+  
+    <p class="text">${message.text}</p>`;
   document.querySelector(".messages-area").appendChild(div);
 }

@@ -1,16 +1,15 @@
 const express = require("express");
-const expressLayouts = require("express-ejs-layouts");
 const app = express();
+
 const http = require("http");
 const path = require("path");
+
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
-
-//app.use(expressLayouts);
-//app.set("view engine", "ejs");
-
-const testHeading = "This is a test heading";
+const formatMessages = require("./messages");
+const botName = "ottonova bot";
+const userName = "Haroon";
 
 app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
@@ -18,17 +17,19 @@ app.get("/", (req, res) => {
 });
 
 io.on("connection", (socket) => {
-  console.log("user connected: " + socket.id);
-  socket.emit("message", "Welcome to Chatroom!");
-  socket.broadcast.emit("message", "A user has joined!");
+  socket.emit("message", formatMessages(botName, "Welcome to Chatroom!"));
+  socket.broadcast.emit(
+    "message",
+    formatMessages(botName, userName + " has joined the chat!")
+  );
 
   socket.on("disconnect", (arg) => {
-    io.emit("message", "A user has left"); // world
+    io.emit("message", formatMessages(botName, userName + " has left"));
   });
 
-  //Listen to chat message
+  //Listen to chat messages from user
   socket.on("chatMsg", (msg) => {
-    io.emit("message", msg);
+    io.emit("message", formatMessages(userName, msg));
   });
 });
 
